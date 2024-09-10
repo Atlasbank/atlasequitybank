@@ -374,7 +374,7 @@
     padding: 10px 0;
 }
 .personall{
-    background-image: url(/assets/image/Home\ Page_Personal_FLEX.png);
+    background-image: url(../images/Home\ Page_Personal_FLEX.png);
     background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -383,7 +383,7 @@
 	min-height: 300px;
 }
 .personal2{
-    background-image: url(/assets/image/Home\ Page_Small\ Biz_FLEX.png);
+    background-image: url(../images/Home\ Page_Small\ Biz_FLEX.png);
     background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -393,7 +393,7 @@
 }
 
 .personal3{
-    background-image: url(/assets/image/Home\ Page_Investments_FLEX.png);
+    background-image: url(../images/Home\ Page_Investments_FLEX.png);
     background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -402,7 +402,7 @@
 	min-height: 300px;
 }
 .personal4{
-    background-image: url(/assets/image/Enterprise\ Defense\ 1.png);
+    background-image: url(../images/Enterprise\ Defense\ 1.png);
     background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;

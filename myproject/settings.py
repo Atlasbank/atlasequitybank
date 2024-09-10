@@ -35,7 +35,7 @@ SECRET_KEY = 'django-insecure-uig^xd^lulg4u#k*fm62x*=6bqk2h^c4ox!c8+0%+m0h#0nmg#
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'rockwell-trust-bank.onrender.com', 'rockwelltrustinvestments.com', 'rockwell-investment.onrender.com', 'www.rockwelltrustinvestments.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'atlasequitybank.onrender.com']
 
 
 # Application definition
