@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-uig^xd^lulg4u#k*fm62x*=6bqk2h^c4ox!c8+0%+m0h#0nmg#
 
 
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'atlasequitybank.onrender.com', 'atlasequitybank.com']
 
@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'rockwellbank',
-    'cloudinary'
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -152,12 +153,10 @@ USE_L10N = True
 USE_TZ = True
 
 CLOUDINARY_STORAGE = {
-'CLOUD_NAME': 'dkwatkcl9',
-'API_KEY': '454482742285496',
-'API_SECRET': 'pGvr8vvZ6l8TQ2ASOhVJYoCwj1k',
+    'CLOUD_NAME': 'dg77rrkf3',
+    'API_KEY': '469899675456271',
+    'API_SECRET': 'CmLy_lOp7kODeT3qwLtU9qhZsqI',
 }
-
-
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
@@ -168,8 +167,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATIC_URL = '/static/'
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -178,5 +176,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+MEDIA_URL = '/media/'
+
 
 

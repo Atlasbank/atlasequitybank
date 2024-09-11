@@ -13,6 +13,8 @@ dj3-cloudinary-storage = "*"
 django-db-file-storage = "*"
 dj-database-url = "*"
 django = "*"
+django-cloudinary-storage = "*"
+gunicorn = "*"
 
 [dev-packages]
 

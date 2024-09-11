@@ -16,7 +16,7 @@ class Portfolio(models.Model):
     address = models.CharField(max_length=200, blank= True, null = True)
     phone_number = models.IntegerField( blank= True, null = True)
     zipcode = models.IntegerField( blank= True, null = True)
-    profile_image = models.ImageField(blank=True, null=True, upload_to="images/")
+    profile_image = models.ImageField(upload_to='portfolio_images/', blank=True, null=True)
     account_total = models.IntegerField(blank= True, null = True)
     pin = models.IntegerField(null= True, blank= True)
     
