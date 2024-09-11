@@ -33,9 +33,9 @@ SECRET_KEY = 'django-insecure-uig^xd^lulg4u#k*fm62x*=6bqk2h^c4ox!c8+0%+m0h#0nmg#
 
 
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'atlasequitybank.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'atlasequitybank.onrender.com', 'atlasequitybank.com']
 
 
 # Application definition
