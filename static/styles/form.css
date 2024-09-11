@@ -30,6 +30,11 @@
   .form-group:last-child {
     margin-right: 0;
   }
+
+  .form-group.full-width {
+    flex: 0 0 100%;
+    margin-right: 0;
+  }
   
   label {
     display: block;

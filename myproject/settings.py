@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import dj_database_url
+import cloudinary 
+import cloudinary.uploader
+import cloudinary.api
+
+
 
 
 
@@ -152,13 +157,20 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+    
+cloudinary.config( 
+  	cloud_name = "dg77rrkf3",
+  	api_key = "469899675456271",
+  	api_secret = "CmLy_lOp7kODeT3qwLtU9qhZsqI"
+)
+
+
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'dg77rrkf3',
     'API_KEY': '469899675456271',
-    'API_SECRET': 'CmLy_lOp7kODeT3qwLtU9qhZsqI',
+    'API_SECRET': 'CmLy_lOp7kODeT3qwLtU9qhZsqI'
 }
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 
@@ -178,6 +190,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
+
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 
 

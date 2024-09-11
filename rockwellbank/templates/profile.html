@@ -16,7 +16,7 @@
   
       <!-- Logo on the left -->
       <a class="navbar-brand" href="#">
-        <img src="{% static 'images/hand-drawn-flat-design-anarchy-symbol.png' %}" alt="Logo" class="navbar-logo " width="50px">
+        <img src="{% static 'images/hand-drawn-flat-design-anarchy-symbol.png' %}" alt="Logo" class="navbar-logo" width="50px">
       </a>
   
       <!-- Centered List Items (visible always) -->
@@ -234,5 +234,13 @@
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function toggleSidebar() {
+   var sidebar = document.getElementById("sidebar");
+   sidebar.classList.toggle("open");
+  }
+  </script>
 </body>
+
+
 </html>

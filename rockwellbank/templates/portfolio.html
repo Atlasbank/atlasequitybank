@@ -138,14 +138,15 @@
   <div id="overlay" class="overlay"></div>
 
 <!-- Sidebar -->
-<div id="sidebar" class=" bg-white ">
-  <div class="bg-danger">    
+<div id="sidebar" class="bg-white">
+  <div class="bg-danger">
     <div>
-  <a href="javascript:void(0)" class="close-btn" onclick="toggleSidebar()"><img src="{% static '/assets/img2/close-x-svgrepo-com.svg' %}" alt="" width="50px" class="img-fluid img1"></a>
-</div>
-</div>
-
-  <ul class="navbar-nav d-lg-none pt-3 ps-3 bg-light w-100 fw-bold text-dark">
+      <a href="javascript:void(0)" class="close-btn" onclick="toggleSidebar()">
+        <img src="{% static 'images/close-x-svgrepo-com.svg' %}" alt="Close" width="50px" class="img-fluid img1">
+      </a>
+    </div>
+  </div>
+  <ul class="navbar-nav pt-3 ps-3 bg-white w-100 fw-bold text-dark">
     <li class="nav-item">
       <a class="nav-link" href="{% url 'portfolio' %}"> Overview</a>
     </li>
@@ -156,10 +157,10 @@
       <a class="nav-link" href="{% url 'profile' %}">User Information</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#"><i class="fa-solid fa-list"></i> QuickAccess</a>
+      <a class="nav-link" href="#"><i class="fa-solid fa-list"></i> Mobile Payment</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#"><i class="fa-solid fa-money-bill-transfer"></i>Mobile Payment</a>
+      <a class="nav-link" href="#"><i class="fa-solid fa-money-bill-transfer"></i>Quick Access</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Bills Payment</a>
@@ -168,7 +169,7 @@
       <a class="nav-link" href="#"><i class="fa-solid fa-list"></i> QR Payment</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#"><i class="fa-solid fa-money-bill-transfer"></i>Credit Card Services</a>
+      <a class="nav-link" href="#"><i class="fa-solid fa-money-bill-transfer"></i>Card</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Cheques</a>
@@ -177,7 +178,7 @@
       <a class="nav-link" href="#"><i class="fa-solid fa-list"></i> Messages</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#"><i class="fa-solid fa-money-bill-transfer"></i>Schedule Payment</a>
+      <a class="nav-link" href="#"><i class="fa-solid fa-money-bill-transfer"></i>Settings</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Travel and Leisure</a>
@@ -190,6 +191,7 @@
     </li>
   </ul>
 </div>
+
 <section class="section1">
   
   <div class="container">
@@ -308,6 +310,9 @@
 </div>
 <img src="" alt="">
 </section>
+
+<div class="space-footer"></div>
+
 <footer class="grid2 shadow d-lg-none">
   <div>
     <a href="{% url 'portfolio' %}" class="text-decoration-none text-dark">

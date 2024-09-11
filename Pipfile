@@ -4,17 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-cloudinary = "*"
-pillow = "*"
-psycopg2 = "*"
-requests = "*"
-whitenoise = "*"
-dj3-cloudinary-storage = "*"
-django-db-file-storage = "*"
-dj-database-url = "*"
 django = "*"
+dj-database-url = "*"
+cloudinary = "*"
 django-cloudinary-storage = "*"
-gunicorn = "*"
+psycopg2 = "*"
+pillow = "*"
+whitenoise = "*"
 
 [dev-packages]
 

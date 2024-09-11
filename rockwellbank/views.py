@@ -198,15 +198,7 @@ def transfer(request):
 
 # Add this code to your views or admin to debug storage
 
-from django.core.files.storage import default_storage
-from django.core.files.base import ContentFile
 
-def debug_file_upload(file):
-    print("Storage backend used:", default_storage.__class__.__name__)
-    print("File URL:", default_storage.url(file.name))
-    # Optionally, upload a test file to see the behavior
-    test_file = ContentFile(b'Test file content', 'test.txt')
-    default_storage.save('test.txt', test_file)
 
 
 

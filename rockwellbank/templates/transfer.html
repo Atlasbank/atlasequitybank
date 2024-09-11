@@ -20,7 +20,7 @@
   
       <!-- Logo on the left -->
       <a class="navbar-brand" href="#">
-        <img src="{% static 'images/hand-drawn-flat-design-anarchy-symbol.png' %}" alt="Logo" class="navbar-logo " width="50px">
+        <img src="{% static 'images/hand-drawn-flat-design-anarchy-symbol.png' %}" alt="Logo" class="navbar-logo" width="50px">
       </a>
   
       <!-- Centered List Items (visible always) -->
@@ -118,63 +118,76 @@
           </div>
     
           <!-- Image on the Right -->
-          
+          {% for user_output in portfolio %}
+          <div>
+            <img
+              src="{{user_output.profile_image.url}}"
+              alt="Logo"
+              class="img-fluid img1"
+              width="40px"
+            />
+          </div>
+          {%endfor%}
         </div>
       </nav>
+     <!-- Overlay -->
+  <div id="overlay" class="overlay"></div>
+
     
     <!-- Sidebar -->
-    <div id="sidebar" class=" bg-white ">
-      <div class="bg-danger">    
-        <div>
-      <a href="javascript:void(0)" class="close-btn" onclick="toggleSidebar()"><img src="{% static '.images/svgexport-52.svg' %}" alt="" width="50px" class="img-fluid img1"></a>
-    </div>
-    </div>
-    
-      <ul class="navbar-nav d-lg-none pt-3 ps-3 bg-light w-100 fw-bold text-dark">
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'portfolio' %}"> Overview</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'transfer' %}">Transfer</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'profile' %}">User Information</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa-solid fa-list"></i> Mobile Payment</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa-solid fa-money-bill-transfer"></i>Quick Access</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Bills Payment</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa-solid fa-list"></i> QR Payment</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa-solid fa-money-bill-transfer"></i>Card</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Cheques</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa-solid fa-list"></i> Messages</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa-solid fa-money-bill-transfer"></i>Settings</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Travel and Leisure</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Bank Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'profile' %}">Log Out</a>
-        </li>
-      </ul>
-    </div>   
+      <div id="sidebar" class="bg-white">
+        <div class="bg-danger">
+          <div>
+            <a href="javascript:void(0)" class="close-btn" onclick="toggleSidebar()">
+              <img src="{% static 'images/close-x-svgrepo-com.svg' %}" alt="Close" width="50px" class="img-fluid img1">
+            </a>
+          </div>
+        </div>
+        <ul class="navbar-nav pt-3 ps-3 bg-white w-100 fw-bold text-dark">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'portfolio' %}"> Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'transfer' %}">Transfer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'profile' %}">User Information</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-solid fa-list"></i> Mobile Payment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-solid fa-money-bill-transfer"></i>Quick Access</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Bills Payment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-solid fa-list"></i> QR Payment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-solid fa-money-bill-transfer"></i>Card</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cheques</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-solid fa-list"></i> Messages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-solid fa-money-bill-transfer"></i>Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Travel and Leisure</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Bank Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+          </li>
+        </ul>
+      </div> 
     
     <div id="profile" class="content-section show">
       <div class="form-container">
@@ -193,7 +206,7 @@
                 {{ form.beneficiary_name }}
               </div>
               <div class="form-group">
-                <label for="{{ form.account_number.id_for_label }}">Account Number</label>
+                <label for="{{ form.account_number.id_for_label }}">Account Number/IBAN</label>
                 {{ form.account_number }}
               </div>
             </div>
@@ -225,26 +238,27 @@
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label for="{{ form.senders_phone_number.id_for_label }}">Sender's Phone Number (format 123456789)</label>
-                {{ form.senders_phone_number }}
-                
-              </div>
-              <div class="form-group">
-                <label for="{{ form.bank_swift_code.id_for_label }}">Bank Swift Code</label>
-                {{ form.bank_swift_code }}
+                <label for="{{ form.senders_phone_number.id_for_label }}">Sender's Phone Number. Please enter your phone number without the plus sign (e.g., 1234567890)</label>
+                {{ form.senders_phone_number }} 
               </div>
             </div>
+
             <div class="form-row">
+              <div class="form-group">
+                <label for="{{ form.bank_swift_code.id_for_label }}"> Bank Swift Code/BIC Code</label>
+                {{ form.bank_swift_code }} 
+              </div>
               <div class="form-group">
                 <label for="{{ form.transfer_pin.id_for_label }}">Transfer PIN</label>
                 {{ form.transfer_pin }}
               </div>
             </div>
+            
             <button type="submit">Submit</button>
           </form>
         </div>
   </div>
-    
+  <div class="space-footer"></div>
       <footer class="grid2 shadow d-lg-none">
         <div>
           <a href="{% url 'portfolio' %}" class="text-decoration-none text-dark">

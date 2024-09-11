@@ -2,7 +2,7 @@ from django.db import models
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
-
+from cloudinary.models import CloudinaryField
 # Create your models here.
 
 class Portfolio(models.Model):
@@ -16,13 +16,16 @@ class Portfolio(models.Model):
     address = models.CharField(max_length=200, blank= True, null = True)
     phone_number = models.IntegerField( blank= True, null = True)
     zipcode = models.IntegerField( blank= True, null = True)
-    profile_image = models.ImageField(upload_to='portfolio_images/', blank=True, null=True)
+    profile_image = CloudinaryField('image', blank=True, null=True)
     account_total = models.IntegerField(blank= True, null = True)
     pin = models.IntegerField(null= True, blank= True)
     
 
     def __str__(self):
         return self.first_name if self.first_name else ''
+    
+    def get_image_name(self):
+        return str(self.profile_image) if self.profile_image else ''
     
     @property
     def imageURL(self):
