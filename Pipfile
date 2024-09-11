@@ -11,6 +11,8 @@ django-cloudinary-storage = "*"
 psycopg2 = "*"
 pillow = "*"
 whitenoise = "*"
+gunicorn = "*"
+requests = "*"
 
 [dev-packages]
 
